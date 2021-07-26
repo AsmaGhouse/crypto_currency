@@ -27,17 +27,18 @@
 
     <ng-container matColumnDef="hour">
         <th mat-header-cell *matHeaderCellDef>% 24Hour </th>
-        <td mat-cell *matCellDef="let element" class="hours"> {{element.hour}} %  
-        <mat-icon *ngIf="element.hour < element.days" class="status-icon" >eject</mat-icon>
-        <mat-icon *ngIf="element.hour > element.days" class="status_high" >eject</mat-icon>
+        <td mat-cell *matCellDef="let element" class="hours">
+            <mat-icon *ngIf="element.hour < element.days" class="status-icon" >eject</mat-icon>
+            <mat-icon *ngIf="element.hour > element.days" class="status_high" >eject</mat-icon>
+             {{element.hour}} %  
         </td>
     </ng-container>
 
     <ng-container matColumnDef="days">
         <th mat-header-cell *matHeaderCellDef>% 7 Days </th>
-        <td mat-cell *matCellDef="let element" class="days"> {{element.days}} %
-        <mat-icon *ngIf="element.days < element.hour" class="status-icon" >eject</mat-icon>
-        <mat-icon *ngIf="element.days > element.hour" class="status_high" >eject</mat-icon>
+        <td mat-cell *matCellDef="let element" class="days"> <mat-icon *ngIf="element.days < element.hour" class="status-icon" >eject</mat-icon>
+            <mat-icon *ngIf="element.days > element.hour" class="status_high" >eject</mat-icon>
+            {{element.days}} %
         </td>
     </ng-container>
 
