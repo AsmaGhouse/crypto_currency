@@ -1,0 +1,30 @@
+<mat-sidenav-container>
+  <mat-sidenav #sidenav>
+    <mat-nav-list> 
+       <a routerLink="" mat-list-item (click)="sidenav.close()">
+         <mat-icon class="side-nav-icon">home</mat-icon>Home</a>
+       <a routerLink="/currency" mat-list-item (click)="sidenav.close()">
+        <mat-icon class="side-nav-icon">attach_money</mat-icon>Currency</a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content >
+    <mat-toolbar color="primary">
+      <div fxHide.gt-xs>
+        <button mat-icon-button (click)="sidenav.toggle()">
+         <mat-icon>menu</mat-icon>
+        </button>
+       </div>
+       <!-- <div>
+         <a routerLink=""><mat-icon id="logo-icon"> attach_money</mat-icon></a>
+       </div> -->
+       <div  fxHide.xs>
+        <a class="top-nav" routerLink="">Home</a>
+        <a class="top-nav" routerLink="/currency">Currency</a>
+       </div>  
+    </mat-toolbar>
+    <main>
+      <router-outlet></router-outlet>
+    </main>
+  </mat-sidenav-content>
+</mat-sidenav-container>

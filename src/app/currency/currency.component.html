@@ -1,0 +1,24 @@
+<form  [formGroup]="currencyCalci" fxLayout="column" fxLayoutAlign="center center" style="height: 85vh;">
+  <mat-label style="padding: 10px;font-size: large;color:#3f51b5;font-weight: bold;">Currency converter</mat-label>
+  <mat-form-field appearance="outline">
+    <mat-label>Enter Bit coin</mat-label>
+    <mat-select formControlName="coins">
+      <mat-option value="1">
+        1
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Enter country</mat-label>
+    <mat-select formControlName="country">
+      <mat-option *ngFor="let items of countries" [value]="items">
+        {{items}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" (click)="submit()" [disabled]="!currencyCalci.valid">Submit</button>
+
+ 
+</form>
